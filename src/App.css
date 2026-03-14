@@ -82,3 +82,73 @@
 .input-container input::placeholder {
   color: #aaa;
 }
+
+.btn-primary {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  background-color: #4caf50;
+  color: white;
+  font-size: 14px;
+  font-family: Arial, sans-serif;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* hover */
+.btn-primary:hover {
+  background-color: #43a047;
+}
+
+/* click */
+.btn-primary:active {
+  transform: scale(0.97);
+}
+
+/* focus */
+.btn-primary:focus {
+  outline: none;
+  box-shadow: 0 0 4px rgba(76, 175, 80, 0.5);
+}
+
+/* bouton désactivé */
+.btn-primary:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.btn-reset {
+  padding: 10px 16px;
+  border: 2px solid #e53935;
+  border-radius: 6px;
+  background-color: transparent;
+  color: #e53935;
+  font-size: 14px;
+  font-family: Arial, sans-serif;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* hover */
+.btn-reset:hover {
+  background-color: #e53935;
+  color: white;
+}
+
+/* click */
+.btn-reset:active {
+  transform: scale(0.97);
+}
+
+/* focus */
+.btn-reset:focus {
+  outline: none;
+  box-shadow: 0 0 4px rgba(229, 57, 53, 0.4);
+}
+
+/* disabled */
+.btn-reset:disabled {
+  border-color: #ccc;
+  color: #ccc;
+  cursor: not-allowed;
+}

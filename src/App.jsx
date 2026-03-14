@@ -1,3 +1,4 @@
+import { Button } from "./seance3/Button";
 import { CheckBox } from "./seance3/CheckBox";
 import { InputText } from "./seance3/InputText";
 
@@ -46,8 +47,8 @@ function App() {
       />
 
       <br />
-      <label>Saisir prénom</label>
-      <button type="submit">Submit</button>
+      <Button text="Reset" buttonClass="reset" />
+      <Button text="Valider" buttonClass="primary" />
     </form>
   );
 }
