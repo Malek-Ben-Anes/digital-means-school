@@ -1,7 +1,7 @@
-import { InscriptionFormContent } from "./seance3/features/InscriptionFormContent";
+import { UsersContent } from "./seance3/features/UsersContent";
 
 function App() {
-  return <InscriptionFormContent />;
+  return <UsersContent />;
 }
 
 export default App;
