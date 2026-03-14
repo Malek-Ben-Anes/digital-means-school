@@ -46,5 +46,5 @@
 
 /* effet hover */
 .checkbox-container:hover .checkmark {
-  border-color: #4caf50;
+  border-color: lightgreen;
 }
