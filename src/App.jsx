@@ -1,4 +1,5 @@
 import { CheckBox } from "./seance3/CheckBox";
+import { InputText } from "./seance3/InputText";
 
 function App() {
   const isWeekend = true;
@@ -18,31 +19,32 @@ function App() {
       />
 
       <br />
-      <label htmlFor="champPrenom">Veuillez saisir votre prénom:</label>
-      <input
-        id="champPrenom"
-        type="text"
-        name="champlibre"
+
+      <InputText
+        id="idPrenom"
+        name="prenom"
+        text="Veuillez saisir votre prénom:"
         placeholder="Veuillez saisir votre prénom"
       />
 
       <br />
-      <label htmlFor="champPrenom">Veuillez saisir votre Nom de famille:</label>
-      <input
-        id="champPrenom"
-        type="text"
-        name="champlibre"
+
+      <InputText
+        id="idNomDeFamille"
+        name="nomDeFamille"
+        text="Veuillez saisir votre Nom de famille:"
         placeholder="Veuillez saisir votre Nom de famille"
       />
 
       <br />
-      <label htmlFor="champPrenom">Veuillez saisir votre profession:</label>
-      <input
-        id="champPrenom"
-        type="text"
-        name="champlibre"
+
+      <InputText
+        id="idProfession"
+        name="profession"
+        text="Veuillez saisir votre profession:"
         placeholder="Veuillez saisir votre profession"
       />
+
       <br />
       <label>Saisir prénom</label>
       <button type="submit">Submit</button>
