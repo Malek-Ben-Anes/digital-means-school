@@ -1,46 +1,38 @@
 import { useState } from "react";
 
 function App() {
-  const [isTansactionOk, setIsTransactionOk] = useState(false);
-
   return (
     <form>
-      <Input isMandatory={true} label="saisir votre prénom" />
-      <CheckBox label="Verifier solde" onVerifieEnfant={setIsTransactionOk} />
+      <input id="weekend-mars" type="checkBox" name="weekend" value={false} />
+      <label htmlFor="weekend-mars">Le jour est un week-end?</label>
+
+      <CheckBox text="Accepter les conditions" />
+
       <br />
-      {isTansactionOk ? "la transaction est ok" : " la transation n'est pas ok"}
+      <input type="checkBox" className="" name="jourferie" value={true} />
+      <label>Le jour est un week-end?</label>
+      <br />
+      <label htmlFor="champPrenom">Veuillez saisir votre prénom:</label>
+      <input
+        id="champPrenom"
+        type="text"
+        name="champlibre"
+        placeholder="Veuillez saisir votre prénom"
+      />
+      <br />
+      <label>Saisir prénom</label>
+      <button type="submit">Submit</button>
     </form>
   );
 }
 
-function Input({ label, isMandatory }) {
+function CheckBox({ text }) {
   return (
-    <>
-      <label>
-        {label}
-        <span style={{ color: "red" }}>{isMandatory && "*"}</span>
-      </label>
-      <input type="text" />
-    </>
-  );
-}
-
-function CheckBox({ label, onVerifieEnfant }) {
-  const [checked, setChecked] = useState(false);
-
-  const toggle = (e) => {
-    const checked = e.target.checked;
-    setChecked(checked);
-
-    onVerifieEnfant(checked);
-  };
-
-  return (
-    <>
-      <label>{label ?? "Veuillez cocher:"}</label>
-      <input type="checkbox" value={checked} onChange={toggle} />
-      {checked ? "c'est selectionné" : "n'est pas selectionné"}
-    </>
+    <label class="checkbox-container">
+      <input type="checkbox" />
+      <span class="checkmark"></span>
+      {text}
+    </label>
   );
 }
 

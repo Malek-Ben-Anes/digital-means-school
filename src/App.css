@@ -1,0 +1,50 @@
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: Arial, sans-serif;
+  cursor: pointer;
+  position: relative;
+}
+
+/* cacher la checkbox native */
+.checkbox-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* boîte personnalisée */
+.checkmark {
+  width: 18px;
+  height: 18px;
+  border: 2px solid #555;
+  border-radius: 4px;
+  display: inline-block;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+/* fond quand cochée */
+.checkbox-container input:checked + .checkmark {
+  background-color: #4caf50;
+  border-color: #4caf50;
+}
+
+/* symbole ✓ */
+.checkbox-container input:checked + .checkmark::after {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 0px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+/* effet hover */
+.checkbox-container:hover .checkmark {
+  border-color: #4caf50;
+}
