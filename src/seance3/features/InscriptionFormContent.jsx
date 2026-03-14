@@ -3,39 +3,32 @@ import { Button } from "../components/Button";
 import { CheckBox } from "../components/CheckBox";
 import { InputText } from "../components/InputText";
 
-export function InscriptionForm() {
-  const [isWeekend, setIsWeekend] = useState(true);
-  const [isNationalDay, setIsNationalDay] = useState(true);
-  const [isConditionAccepted, setIsConditionAccepted] = useState(false);
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [profession, setProfession] = useState("");
-  const [description, setDescription] = useState("");
+const INITIAL_STATE = {
+  firstName: "",
+  lastName: "",
+  profession: "",
+  description: "",
+  isWeekend: false,
+  isNationalDay: false,
+  isConditionAccepted: false,
+};
+
+export function InscriptionFormContent() {
+  const [content, setContent] = useState(INITIAL_STATE);
 
   const onValidate = () => {
-    const content = {
-      firstName: firstName,
-      lastName: lastName,
-      profession: profession,
-      description: description,
-      isWeekend: isWeekend,
-      isNationalDay: isNationalDay,
-      isConditionAccepted: isConditionAccepted,
-    };
-
-    // TODO Send Data to backend
-
     alert(JSON.stringify(content));
   };
 
   const onReset = () => {
-    setFirstName("");
-    setLastName("");
-    setProfession("");
-    setDescription("");
-    setIsWeekend(false);
-    setIsNationalDay(false);
-    setIsConditionAccepted(false);
+    setContent(INITIAL_STATE);
+  };
+
+  const onChange = (fieldName, newValue) => {
+    setContent({
+      ...content,
+      [fieldName]: newValue,
+    });
   };
 
   return (
@@ -43,19 +36,19 @@ export function InscriptionForm() {
       <InputText
         id="idPrenom"
         name="firstname"
-        value={firstName}
-        onChange={setFirstName}
+        value={content.firstName}
+        onChange={(value) => onChange("firstName", value)}
         text="Veuillez saisir votre prénom:"
         placeholder="Veuillez saisir votre prénom"
       />
 
       <InputText
         id="idNomDeFamille"
-        name="nomDeFamille"
+        name="lastName"
         text="Veuillez saisir votre Nom de famille:"
         placeholder="Veuillez saisir votre Nom de famille"
-        value={lastName}
-        onChange={setLastName}
+        value={content.lastName}
+        onChange={(value) => onChange("lastName", value)}
       />
 
       <InputText
@@ -63,8 +56,8 @@ export function InscriptionForm() {
         name="profession"
         text="Veuillez saisir votre profession:"
         placeholder="Veuillez saisir votre profession"
-        value={profession}
-        onChange={setProfession}
+        value={content.profession}
+        onChange={(value) => onChange("profession", value)}
       />
 
       <InputText
@@ -72,29 +65,29 @@ export function InscriptionForm() {
         name="description"
         text="Une description"
         placeholder="Veuillez saisir une description"
-        value={description}
-        onChange={setDescription}
+        value={content.description}
+        onChange={(value) => onChange("description", value)}
       />
 
       <br />
       <CheckBox
         text="Le jour est un week-end?"
-        value={isWeekend}
-        onChange={setIsWeekend}
+        value={content.isWeekend}
+        onChange={(value) => onChange("isWeekend", value)}
       />
 
       <br />
       <CheckBox
         text="Le jour est une fête nationale?"
-        value={isNationalDay}
-        onChange={setIsNationalDay}
+        value={content.isNationalDay}
+        onChange={(value) => onChange("isNationalDay", value)}
       />
 
       <br />
       <CheckBox
         text="Accepter les conditions"
-        value={isConditionAccepted}
-        onChange={setIsConditionAccepted}
+        value={content.isConditionAccepted}
+        onChange={(value) => onChange("isConditionAccepted", value)}
       />
       <br />
 

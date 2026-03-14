@@ -1,7 +1,7 @@
-import { InscriptionForm } from "./seance3/features/InscriptionForm";
+import { InscriptionFormContent } from "./seance3/features/InscriptionFormContent";
 
 function App() {
-  return <InscriptionForm />;
+  return <InscriptionFormContent />;
 }
 
 export default App;
