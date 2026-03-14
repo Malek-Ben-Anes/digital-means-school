@@ -3,24 +3,20 @@ import { CheckBox } from "./seance3/CheckBox";
 import { InputText } from "./seance3/InputText";
 
 function App() {
-  const isWeekend = true;
-  const isNationalDay = true;
+  const isWeekend = false;
+  const isNationalDay = false;
+
+  // CallBack
+  const onAlert = () => {
+    alert("this is an alert");
+  };
+
+  const onReset = () => {
+    alert("Reset forms");
+  };
 
   return (
-    <form>
-      <CheckBox text="Le jour est un week-end?" isChecked={isWeekend} />
-
-      <br />
-      <CheckBox text="Accepter les conditions" />
-
-      <br />
-      <CheckBox
-        text="Le jour est une fête nationale?"
-        isChecked={isNationalDay}
-      />
-
-      <br />
-
+    <div>
       <InputText
         id="idPrenom"
         name="prenom"
@@ -47,9 +43,23 @@ function App() {
       />
 
       <br />
-      <Button text="Reset" buttonClass="reset" />
-      <Button text="Valider" buttonClass="primary" />
-    </form>
+
+      <CheckBox text="Le jour est un week-end?" isChecked={isWeekend} />
+
+      <br />
+      <CheckBox
+        text="Le jour est une fête nationale?"
+        isChecked={isNationalDay}
+      />
+
+      <br />
+      <CheckBox text="Accepter les conditions" />
+      <br />
+
+      <br />
+      <Button text="Reset" buttonClass="reset" onClick={onReset} />
+      <Button text="Valider" buttonClass="primary" onClick={onAlert} />
+    </div>
   );
 }
 
