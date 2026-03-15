@@ -1,7 +1,5 @@
-import { Counter } from "./seance4/Counter";
-
 function App() {
-  return <Counter />;
+  return <div></div>;
 }
 
 export default App;
