@@ -1,7 +1,7 @@
-import { UsersContent } from "./seance3/features/UsersContent";
+import { Counter } from "./seance4/Counter";
 
 function App() {
-  return <UsersContent />;
+  return <Counter />;
 }
 
 export default App;
